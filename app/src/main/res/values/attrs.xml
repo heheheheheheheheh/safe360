@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SettingItemButton">
+
+        <!-- <attr name="src" format="reference|color" /> -->
+		
+        <attr name="sib_title" format="string"></attr>
+        <attr name="open_status" format="boolean"></attr>
+    </declare-styleable>
+    
+
+</resources>

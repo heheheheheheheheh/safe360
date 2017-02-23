@@ -1,10 +1,10 @@
 package com.example.dell.safe360;
 
+import com.example.dell.safe360.bean.ServerVersionInfo;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
 
 /**
  * @version ${Rev}
@@ -18,11 +18,8 @@ import retrofit2.http.POST;
  */
 
 public interface HttpApi {
-    @FormUrlEncoded
-    @POST("search")
-    Call<Response> search(
-            @Field("keyword") String keyword,
-            @Field("page") String page,
-            @Field("pageNum") String pageNum,
-            @Field("orderby") String orderby);
+    @GET("versioncode.json")
+    Call<ServerVersionInfo> checkVersion();
+    @GET()
+    Call<ResponseBody> download();
 }
