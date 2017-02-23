@@ -1,11 +1,10 @@
 package com.example.dell.safe360.activity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -64,9 +63,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initIconAnim() {
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(mIvMainIcon, "rotationY", 0f,90f,180f,270f,360f);
+        animator.setRepeatCount(ObjectAnimator.INFINITE);//无限循环
+        animator.setRepeatMode(ObjectAnimator.REVERSE);//反转
+        animator.setDuration(3000);//3秒
+        animator.start();
+        /*Animation animation = AnimationUtils.loadAnimation(this, R.anim.rotate);
         mIvMainIcon.setAnimation(animation);
-        animation.start();
+        animation.start();*/
         /*ViewCompat.animate(mIvMainIcon)
                 .scaleX(0.5F)
                 .scaleY(0.5F)
