@@ -3,7 +3,6 @@ package com.example.dell.safe360.activity;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -16,9 +15,8 @@ import com.example.dell.safe360.bean.ItemMain;
 import java.util.ArrayList;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Bind(R.id.iv_main_icon)
     ImageView mIvMainIcon;
     @Bind(R.id.iv_main_setting)
@@ -36,9 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        super.onCreate(savedInstanceState);
         initEvent();//初始化点击事件
         initData();
     }

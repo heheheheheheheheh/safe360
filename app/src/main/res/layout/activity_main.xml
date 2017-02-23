@@ -41,7 +41,7 @@
                 android:focusableInTouchMode="true"
                 android:marqueeRepeatLimit="marquee_forever"
                 android:singleLine="true"
-                android:text="安全卫士,时刻保护您的手机安全,123456789"
+                android:text="安全卫士,时刻保护您的手机安全,123456789,..安全卫士,时刻保护您的手机安全,123456789abcdefg"
                 android:textColor="#F00"/>
         </LinearLayout>
 
