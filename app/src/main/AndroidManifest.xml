@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.SettingShowActivity"/>
+        <activity android:name=".activity.SJFD01Activity">
+        </activity>
     </application>
 
 </manifest>

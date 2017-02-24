@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:my="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 头部布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll_sjfd01_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 标题 -->
+
+        <TextView
+            style="@style/titleStyle"
+            android:gravity="left|center_vertical"
+            android:padding="3dp"
+            android:text="3.设置安全号码" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="5dp"
+            android:text="SIM卡如果发生变化:\n就会发送报警短信给安全号码"
+            android:textSize="16sp" />
+
+        <!-- 按钮布局 -->
+
+        <EditText
+            android:id="@+id/et_sjfd03_safe_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="10dp"
+            android:inputType="phone"
+            android:hint="请输入安全号码" />
+
+        <Button
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="选择安全号码" />
+    </LinearLayout>
+    <!-- 底部布局 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_sjfd01_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/bt_sjfd01_pre"
+            style="@style/buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pre"
+            android:drawablePadding="2dp"
+            android:onClick="clickPre"
+            android:padding="8dp"
+            android:text="上一步" />
+
+        <Button
+            android:id="@+id/bt_sjfd01_next"
+            style="@style/buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="2dp"
+            android:drawableRight="@drawable/next"
+            android:onClick="clickNext"
+            android:padding="8dp"
+            android:text="下一步" />
+
+        <com.heima.mobsafe12.views.GuidePoints
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/bt_sjfd01_next"
+            android:layout_toRightOf="@+id/bt_sjfd01_pre"
+            android:gravity="center"
+            android:orientation="horizontal"
+            my:selectPoint="2" >
+        </com.heima.mobsafe12.views.GuidePoints>
+    </RelativeLayout>
+
+    <!-- 中部 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_sjfd01_bottom"
+        android:layout_below="@+id/ll_sjfd01_head" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/step_3" />
+    </RelativeLayout>
+
+</RelativeLayout>

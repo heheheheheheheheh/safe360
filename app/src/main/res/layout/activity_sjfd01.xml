@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:my="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 头部布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll_sjfd01_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- 标题 -->
+
+        <TextView
+            style="@style/titleStyle"
+            android:gravity="left|center_vertical"
+            android:padding="3dp"
+            android:text="1.欢迎使用手机防盗" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="5dp"
+            android:text="您的手机防盗卫士:"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/sjfd_setting_item"
+            android:text="SIM卡变更报警" />
+
+        <TextView
+            style="@style/sjfd_setting_item"
+            android:text="GPS追踪" />
+
+        <TextView
+            style="@style/sjfd_setting_item"
+            android:text="远程锁屏" />
+
+        <TextView
+            style="@style/sjfd_setting_item"
+            android:text="远程销毁数据" />
+    </LinearLayout>
+    <!-- 底部布局 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_sjfd01_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/bt_sjfd01_pre"
+            style="@style/buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pre"
+            android:drawablePadding="2dp"
+            android:padding="8dp"
+            android:text="上一步"
+            android:onClick="clickPre"
+            android:visibility="invisible" />
+
+        <Button
+            android:onClick="clickNext"
+            android:id="@+id/bt_sjfd01_next"
+            style="@style/buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="2dp"
+            android:drawableRight="@drawable/next"
+            android:padding="8dp"
+            android:text="下一步" />
+
+        <com.heima.mobsafe12.views.GuidePoints
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/bt_sjfd01_next"
+            android:layout_toRightOf="@+id/bt_sjfd01_pre"
+            android:gravity="center"
+            android:orientation="horizontal"
+            my:selectPoint="0" >
+        </com.heima.mobsafe12.views.GuidePoints>
+
+        <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/bt_sjfd01_next"
+            android:layout_toRightOf="@+id/bt_sjfd01_pre"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/sjfd_gudie_point_green" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/sjfd_gudie_point_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/sjfd_gudie_point_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/sjfd_gudie_point_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sjfd_gudie_point_gray" />
+        </LinearLayout>
+        -->
+    </RelativeLayout>
+
+    <!-- 中部 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_sjfd01_bottom"
+        android:layout_below="@+id/ll_sjfd01_head" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/step_1" />
+    </RelativeLayout>
+
+</RelativeLayout>

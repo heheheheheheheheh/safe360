@@ -33,6 +33,7 @@ public class SPUtils {
         return preferences.getBoolean(key, true);
         
     }
+    
     //读取boolean状态
     public static boolean getBoolean_false(Context context,String key)
     {
@@ -40,5 +41,21 @@ public class SPUtils {
         SharedPreferences preferences = context.getSharedPreferences(Fields.SPNAME, Context.MODE_PRIVATE);
         return preferences.getBoolean(key, false);
         
+    }
+    
+    //1. 保存String类型数据
+    public static void saveString(Context context,String key,String value)
+    {
+        SharedPreferences preferences = context.getSharedPreferences(Fields.SPNAME, Context.MODE_PRIVATE);
+        Editor edit = preferences.edit();
+        edit.putString(key, value);
+        edit.commit();
+    }
+    
+    
+    //获取String数据
+    public static String getString(Context context,String key){
+        SharedPreferences preferences = context.getSharedPreferences(Fields.SPNAME, Context.MODE_PRIVATE);
+        return preferences.getString(key, "");
     }
 }
